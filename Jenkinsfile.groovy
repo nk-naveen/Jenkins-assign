@@ -10,7 +10,7 @@ pipeline {
         }
         stage('CI') {
             steps {
-                sh 'python3 $WORKSPACE/cal_app/TestCalculator.py'
+                sh 'python3 $WORKSPACE/Calculatorandunittest/TestCalculator.py'
             }
         }
         stage('CD') {
