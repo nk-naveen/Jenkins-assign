@@ -3,17 +3,17 @@ pipeline {
         label 'docker-slave'
     }
     stages {
-        stage('GIT-code') {
+        stage('GIT-CODE') {
             steps {
                 git branch: 'master', url: 'https://github.com/nk-naveen/Jenkins-assign'
             }
         }
-        stage('Continous-Integration') {
+        stage('CONTINOUS-INTEGRATION') {
             steps {
-                sh 'python3 $WORKSPACE/Calculatorandunittest/TestCalculator.py'
+                sh 'python3 $WORKSPACE/Cal/TestCalculator.py'
             }
         }
-        stage('Ccontinous-Deployment') {
+        stage('CONTINOUS-DEPLOYMENT/DELIVERY') {
             environment {
                 STACK_NAME = 'cont-del'
                 S3_BUCKET = 'aws-sam-cli-managed-default-samclisourcebucket-mj6zdx1naar'
